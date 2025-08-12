@@ -1,6 +1,12 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
+import { Dancing_Script } from "next/font/google"; // 🎯 Handwriting font
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 const phrases = [
   ["Transform", "Your Business", "with", "Technology"],
@@ -11,10 +17,9 @@ const phrases = [
 
 const TaglineOverlay = () => {
   const [index, setIndex] = useState(0);
-  const [hasMounted, setHasMounted] = useState(false); // <- NEW
+  const [hasMounted, setHasMounted] = useState(false);
   const effectContainerRef = useRef<HTMLDivElement>(null);
 
-  // Fix hydration mismatch
   useEffect(() => {
     setHasMounted(true);
   }, []);
@@ -56,26 +61,27 @@ const TaglineOverlay = () => {
       >
         <video
           src="/bnner.mp4"
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-140 object-cover"
           autoPlay
           loop
           muted
           playsInline
         />
-
         {hasMounted && (
           <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none px-4">
-            <div className="text-white text-center space-y-3 transition-opacity duration-700 ease-in-out">
+            <div
+              className={`${dancingScript.className} text-white text-center space-y-3 transition-opacity duration-700 ease-in-out`}
+            >
               <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-3xl sm:text-4xl md:text-5xl font-bold">
                 <span className="text-amber-400">{current[0]}</span>
                 <span>{current[1]}</span>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-3xl sm:text-4xl md:text-5xl font-bold text-red-900">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-3xl sm:text-4xl md:text-5xl text-red-900">
                 {current[2] && <span>{current[2]}</span>}
               </div>
 
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-3xl sm:text-4xl md:text-5xl font-bold">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-3xl sm:text-4xl md:text-5xl">
                 {current[3] && <span>{current[3]}</span>}
                 {current[4] && <span>{current[4]}</span>}
               </div>
@@ -84,10 +90,9 @@ const TaglineOverlay = () => {
         )}
       </div>
 
-     
       <style>{`
         .ripple-effect {
-          position: fixed;
+          position: absolute;
           width: 100px;
           height: 100px;
           background: radial-gradient(circle, rgba(129, 213, 232, 0.4), transparent);

@@ -1,18 +1,9 @@
-// app/Components/Footer.tsx
-
 import React from "react";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaInstagram,
-  FaYoutube,
-  FaWhatsapp,
-} from "react-icons/fa";
+import {FaFacebookF,FaLinkedinIn,FaInstagram,FaYoutube,FaWhatsapp,} from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-cyan-900 text-gray-300 py-10 px-6">
+    <footer className="bg-cyan-900 text-gray-300 py-10 px-6  ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Company Info */}
         <div>
@@ -48,11 +39,12 @@ const Footer: React.FC = () => {
   Quick Links   
 </h3>
     
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm underline">
             <li><a href="#" className="hover:text-yellow-300">Home</a></li>
             <li><a href="#" className="hover:text-yellow-300">About Us</a></li>
             <li><a href="#" className="hover:text-yellow-300">Services</a></li>
             <li><a href="#" className="hover:text-yellow-300">Contact</a></li>
+            <li><a href="#" className="hover:text-yellow-300">Carrer</a></li>
           </ul>
         </div>
 
@@ -61,11 +53,16 @@ const Footer: React.FC = () => {
           <h3 className="text-xl font-bold text-white mb-6 relative inline-block after:content-[''] after:block after:w-half after:h-[3px] after:bg-gradient-to-r after:from-cyan-100 after:to-blue-400 after:rounded-full after:transition-all after:duration-500 hover:after:from-white hover:after:to-white transition-transform hover:-translate-y-1">
   Services
 </h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm underline ">
             <li><a href="#" className="hover:text-yellow-300">Web Development</a></li>
-            <li><a href="#" className="hover:text-yellow-300">UI/UX Design</a></li>
-            {/* <li><a href="#" className="hover:text-white">Cloud Solutions</a></li> */}
-            {/* <li><a href="#" className="hover:text-white">Tech Consulting</a></li> */}
+            {/* <li><a href="#" className="hover:text-yellow-300">UI/UX Design</a></li> */}
+            <li><a href="#" className="hover:text-yellow-300">App Development</a></li>
+            <li><a href="#" className="hover:text-yellow-300">Digital Marketing</a></li>
+            <li><a href="#" className="hover:text-yellow-300">Software development</a></li>
+            <li><a href="#" className="hover:text-yellow-300">IT Sales Services </a></li>
+            <li><a href="#" className="hover:text-yellow-300">Software Testing</a></li>
+            <li><a href="#" className="hover:text-yellow-300"> All type tech Maintance Service</a></li>
+             
           </ul>
         </div>
 
@@ -91,7 +88,7 @@ Contact Us
 </a>
 
       {/* Bottom */}
-      <div className="text-center text-sm text-white mt-10 border-t border-gray-700 pt-6">
+      <div className="text-center text-2x1 text-white mt-5 border-t border-gray-700 pt-6">
      &copy; Copyright dreamskytech  {new Date().getFullYear()}. All rights reserved.
       </div>
     </footer>

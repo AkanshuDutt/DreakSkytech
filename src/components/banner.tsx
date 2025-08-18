@@ -1,12 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { Dancing_Script } from "next/font/google"; // 🎯 Handwriting font
-
-const dancingScript = Dancing_Script({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 const phrases = [
   ["Transform", "Your Business", "with", "Technology"],
@@ -18,8 +12,9 @@ const phrases = [
 const TaglineOverlay = () => {
   const [index, setIndex] = useState(0);
   const [hasMounted, setHasMounted] = useState(false);
-  const effectContainerRef = useRef<HTMLDivElement>(null);
+  const effectContainerRef = useRef(null);
 
+  // Fix hydration mismatch
   useEffect(() => {
     setHasMounted(true);
   }, []);
@@ -34,7 +29,7 @@ const TaglineOverlay = () => {
     return () => clearInterval(interval);
   }, [hasMounted]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e) => {
     const container = effectContainerRef.current;
     if (!container) return;
 
@@ -54,6 +49,7 @@ const TaglineOverlay = () => {
 
   return (
     <>
+      {/* Section 1: Banner */}
       <div
         className="relative w-full h-screen overflow-hidden"
         onMouseMove={handleMouseMove}
@@ -61,27 +57,26 @@ const TaglineOverlay = () => {
       >
         <video
           src="/bnner.mp4"
-          className="absolute top-0 left-0 w-full h-140 object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover"
           autoPlay
           loop
           muted
           playsInline
         />
+
         {hasMounted && (
           <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none px-4">
-            <div
-              className={`${dancingScript.className} text-white text-center space-y-3 transition-opacity duration-700 ease-in-out`}
-            >
+            <div className="text-white text-center space-y-3 transition-opacity duration-700 ease-in-out">
               <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-3xl sm:text-4xl md:text-5xl font-bold">
                 <span className="text-amber-400">{current[0]}</span>
                 <span>{current[1]}</span>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-3xl sm:text-4xl md:text-5xl text-red-900">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-3xl sm:text-4xl md:text-5xl font-bold text-red-900">
                 {current[2] && <span>{current[2]}</span>}
               </div>
 
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-3xl sm:text-4xl md:text-5xl">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-3xl sm:text-4xl md:text-5xl font-bold">
                 {current[3] && <span>{current[3]}</span>}
                 {current[4] && <span>{current[4]}</span>}
               </div>
@@ -90,6 +85,8 @@ const TaglineOverlay = () => {
         )}
       </div>
 
+      
+     
       <style>{`
         .ripple-effect {
           position: absolute;
@@ -117,9 +114,56 @@ const TaglineOverlay = () => {
             transform: translate(-50%, -50%) scale(4);
           }
         }
+
+        .project-card {
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover {
+          transform: translateY(-12px) scale(1.02);
+        }
+
+        .service-card {
+          transition: all 0.3s ease-in-out;
+        }
+
+        .service-card:hover {
+          transform: translateY(-8px);
+        }
+
+        .floating-animation {
+          animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          33% { transform: translateY(-15px) rotate(1deg); }
+          66% { transform: translateY(-25px) rotate(-1deg); }
+        }
+
+        .dots-animation {
+          animation: dots-twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes dots-twinkle {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.8; transform: scale(1.2); }
+        }
+
+        .glow-effect {
+          box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .text-gradient {
+          background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       `}</style>
     </>
   );
 };
+
 
 export default TaglineOverlay;

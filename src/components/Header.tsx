@@ -71,6 +71,7 @@ const Header: React.FC = () => {
   <a href="/Service" className="relative pb-1  hover:border-cyan-200 border-b-2 border-transparent transition-all duration-300">Services</a>
   <a href="/Project" className="relative pb-1  hover:border-cyan-200 border-b-2 border-transparent transition-all duration-300">Our Project</a>
   <a href="/Contact" className="relative pb-1  hover:border-cyan-200 border-b-2 border-transparent transition-all duration-300">Contact Us</a>
+  <a href="/AdminDiseboad " className="relative pb-1  hover:border-cyan-200 border-b-2 border-transparent transition-all duration-300">Admin</a>
 </nav>
 
 

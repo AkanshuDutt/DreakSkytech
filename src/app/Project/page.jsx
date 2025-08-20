@@ -17,6 +17,11 @@ export default function Projects() {
   const projects = [
     { id: 1, img: "/design.png", demo: "https://www.dreamskyairways.com/" },
     { id: 2, img: "/aviation.png", demo: "https://airaviationinstitute.in" },
+    {
+      id: 3,
+      img: "/vista.png",
+      demo: "https://vistaglobalacademy.com/",
+    }
   ];
   module.exports = {
   content: [
@@ -86,14 +91,19 @@ export default function Projects() {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className={`relative group overflow-hidden rounded-full transform transition-all duration-700 ease-out
-                hover:scale-110 border-2 border-indigo-800
-                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-                shadow-[0_0_20px_rgba(0,255,255,0.4)] hover:shadow-[0_0_15px_rgba(0,255,255,0.8)]`}
+              // className={`relative group overflow-hidden rounded-full transform transition-all duration-700 mt-1   ease-out
+              //   hover:scale-110 border-2 border-indigo-800
+              //   ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+              //   shadow-[0_0_20px_rgba(0,255,255,0.4)] hover:shadow-[0_0_15px_rgba(0,255,255,0.8)]`}
+              className={`relative group overflow-hidden rounded-full transform transition-all duration-700 -mt-5 ease-out
+    hover:scale-110 border-2 border-indigo-800
+    ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+    shadow-[0_0_20px_rgba(0,255,255,0.4)] hover:shadow-[0_0_15px_rgba(0,255,255,0.8)]`}
+
               style={{
-                width: "270px",
-                height: "240px",
-                transitionDelay: `${index * 150}ms`,
+                width: "250px",
+                height: "140px",
+                transitionDelay: `${index * 100}ms`,
                 display: "block",
               }}
             >

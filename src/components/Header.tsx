@@ -36,7 +36,7 @@ const Header: React.FC = () => {
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <span>Visit our social pages</span>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300">
+            <a href="https://wa.me/8750610304" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300">
               <FaWhatsapp />
             </a>
             <a href="https://www.facebook.com/dreamskyairwayspvtltd" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300">

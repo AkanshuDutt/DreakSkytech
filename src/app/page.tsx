@@ -5,7 +5,9 @@ import Footer from "@/components/Footer"
 import Projects from "@/app/Project/page"
 import Team from "@/app/Team/page"
 import Technology from './TechSolutionsPage/page'
+// import Form from "@/app/Form/page"
 
+// Main Home component
 
 const Home = () => {
   return (
@@ -15,6 +17,7 @@ const Home = () => {
       <Projects/>
       <Team/>
       <Technology/>
+      {/* <Form /> */}
       <Footer />
     </div>
   )

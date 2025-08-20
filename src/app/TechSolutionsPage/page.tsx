@@ -127,12 +127,35 @@ export default function Technology() {
             {selectedTech.usedFor}
           </span>
           <p className="text-gray-300 mt-4">{selectedTech.description}</p>
-          <button
+          {/* <button
             onClick={handleBack}
-            className="mt-6 inline-block text-blue-400 hover:underline font-medium"
+            className="mt-6 inline-block text-blue-400 mr-6 hover:underline font-medium"
           >
             Back to Technologies
           </button>
+           <a href="/Contact"
+            onClick={handleBack}
+            className="mt-6 inline-block text-blue-400  hover:underline font-medium"
+          >
+            Let's Enquiry
+          </a> */}
+          <div className="flex gap-6 mt-6">
+  <button
+    onClick={handleBack}
+    className="text-blue-400 hover:underline font-medium"
+  >
+    Back to Technologies
+  </button>
+
+  <a
+    href="/Contact"
+    onClick={handleBack}
+    className="text-blue-400 hover:underline font-medium"
+  >
+    Let's Enquiry
+  </a>
+</div>
+
         </div>
       </div>
     );

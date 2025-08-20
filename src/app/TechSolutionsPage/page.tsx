@@ -10,10 +10,6 @@ const technologies = {
       usedFor: 'Markup', 
       icon: <SiHtml5 className="text-orange-600 w-12 h-12" />,
       description: "HTML (HyperText Markup Language) is the standard markup language for creating web pages, structuring content like text, images, and links."
-    
-    
-    
-    
     },
     { 
       name: 'CSS', 
@@ -103,11 +99,11 @@ const technologies = {
 const TechCard = ({ tech, onClick }) => (
   <div 
     onClick={() => onClick(tech)} 
-    className="cursor-pointer bg-white shadow-lg rounded-xl p-6 flex flex-col items-center text-center hover:scale-105 transform transition-all duration-300"
+    className="cursor-pointer bg-gradient-to-br bg-white rounded-xl p-6 flex flex-col items-center text-center hover:scale-105 transform transition-all duration-300"
   >
     <div className="mb-3">{tech.icon}</div>
-    <h3 className="text-lg font-bold">{tech.name}</h3>
-    <span className="mt-2 px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">{tech.usedFor}</span>
+    <h3 className="text-lg font-bold text-black">{tech.name}</h3>
+    <span className="mt-2 px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">{tech.usedFor}</span>
   </div>
 );
 
@@ -118,21 +114,22 @@ export default function Technology() {
     setSelectedTech(null);
   };
 
+  // Render only the details view when a technology is selected
   if (selectedTech) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-6">
-        <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-8">
+      <div className="min-h-screen bg-black py-16 px-6 flex items-center justify-center">
+        <div className="max-w-3xl w-full bg-gray-900 shadow-lg rounded-xl p-8">
           <div className="flex items-center mb-4">
             <div className="mr-4">{selectedTech.icon}</div>
-            <h1 className="text-3xl font-bold">{selectedTech.name}</h1>
+            <h1 className="text-3xl font-bold text-white">{selectedTech.name}</h1>
           </div>
-          <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm mb-4 inline-block">
+          <span className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm mb-4 inline-block">
             {selectedTech.usedFor}
           </span>
-          <p className="text-gray-700 mt-4">{selectedTech.description}</p>
+          <p className="text-gray-300 mt-4">{selectedTech.description}</p>
           <button
             onClick={handleBack}
-            className="mt-6 inline-block text-blue-500 hover:underline font-medium"
+            className="mt-6 inline-block text-blue-400 hover:underline font-medium"
           >
             Back to Technologies
           </button>
@@ -141,13 +138,14 @@ export default function Technology() {
     );
   }
 
+  // Render the main technology grid when no technology is selected
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-6">
-      <h1 className="text-4xl font-extrabold text-center mb-12">Technologies We Use</h1>
+    <div className="min-h-screen bg-gradient-to-br  from-000203 to-gray-900 py-16 px-6">
+      <h1 className="text-4xl font-extrabold text-center text-white mb-12">Technologies We Use</h1>
 
       {/* Frontend */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6">Frontend</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-white">Frontend</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {technologies.frontend.map((tech) => (
             <TechCard key={tech.name} tech={tech} onClick={setSelectedTech} />
@@ -157,7 +155,7 @@ export default function Technology() {
 
       {/* Backend */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6">Backend</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-white">Backend</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {technologies.backend.map((tech) => (
             <TechCard key={tech.name} tech={tech} onClick={setSelectedTech} />
@@ -167,7 +165,7 @@ export default function Technology() {
 
       {/* CRM */}
       <section>
-        <h2 className="text-2xl font-semibold mb-6">CRM</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-white">CRM</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {technologies.crm.map((tech) => (
             <TechCard key={tech.name} tech={tech} onClick={setSelectedTech} />

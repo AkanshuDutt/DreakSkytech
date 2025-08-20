@@ -61,7 +61,7 @@ export default function About() {
       {/* Hero Section */}
       <div className="relative z-10 pt-10 pb-16 px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white-950  to-white mb-1 animate-pulse mt-0">
+          <h1 className="text-4xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white-950  to-white mb-1 animate-pulse mt-25">
             Our Services
           </h1>
           {/* <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">

@@ -151,7 +151,7 @@ const ContactPage = () => {
      
       {/* Fixed Background */}
       <div
-        className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-fixed mt-10 brightness-100 -z-20"
+        className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-fixed mt-70 brightness-100 -z-20"
         style={{ backgroundImage: "url('/sky.jpg') " }}
    
 
@@ -197,25 +197,25 @@ const ContactPage = () => {
             className="transform transition-transform duration-300 ease-out"
             style={{ transform: `translate(${mousePosition.x * 0.05}px, ${mousePosition.y * 0.05}px)` }}
           >
-            <h1 className="text-5xl md:text-6xl font-black mt-1 mb-1">
+            <h1 className="text-5xl md:text-6xl font-black mt-1  mb-0">
               {/* <span className="text-yellow-400 animate-pulse flex-flex wrap corner"> */}
               {/* <span className="text-yellow-400 animate-pulse fixed top-2 right-4 pt-0 pb-650">
   Contact Us
 </span> */}
 
-<span className="text-yellow-400 animate-pulse fixed top-1 pb-18 right-4">
+<span className="text-yellow-400 animate-pulse fixed top-1 pb-16 mt-10 right-4">
   Contact Us
 </span>
 
             
-              <span className="text-blue-400 block">
+              <span className="text-blue-400 mt-10 block">
               
               </span>
             </h1>
           </div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20">  
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-15">  
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon;
